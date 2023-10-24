@@ -37,7 +37,7 @@ UserRouter.get(
                      { expiresIn: 60 * 60 * 24})
                 res.cookie("token", token, { maxAge: 60 * 60 * 24 })
                 // res.status(202).json({ msg: "login done successfull using google auth" })
-                res.redirect('http://localhost:3000/Dashboard')  
+                res.redirect('https://marvelous-kashata-778903.netlify.app/Dashboard')  
                       
 
             }
@@ -49,7 +49,7 @@ UserRouter.get(
                 const isPresent = await userModel.findOne({ email: req.user.email });
                 const token = jwt.sign({ id: isPresent._id }, process.env.JWT_ACCESS_TOKEN_SECRET_KEY)
                 res.cookie("token", token, { maxAge: 60 * 60 * 24})
-                res.redirect('http://localhost:3000/Dashboard') 
+                res.redirect('https://marvelous-kashata-778903.netlify.app/Dashboard') 
 
                 
             }
