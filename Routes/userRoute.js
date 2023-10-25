@@ -37,7 +37,8 @@ UserRouter.get(
                      { expiresIn: 60 * 60 * 24})
                 res.cookie("token", token, { maxAge: 60 * 60 * 24 })
                 // res.status(202).json({ msg: "login done successfull using google auth" })
-                res.redirect('https://serene-kringle-87732f.netlify.app/Dashboard')  
+                res.redirect('https://delicate-semifreddo-da459c.netlify.app/Dashboard')  
+                // res.redirect('https://serene-kringle-87732f.netlify.app/Dashboard')  
                       
 
             }
@@ -49,7 +50,8 @@ UserRouter.get(
                 const isPresent = await userModel.findOne({ email: req.user.email });
                 const token = jwt.sign({ id: isPresent._id }, process.env.JWT_ACCESS_TOKEN_SECRET_KEY)
                 res.cookie("token", token, { maxAge: 60 * 60 * 24})
-                res.redirect('https://serene-kringle-87732f.netlify.app/Dashboard') 
+                res.redirect('https://delicate-semifreddo-da459c.netlify.app/Dashboard') 
+                // res.redirect('https://serene-kringle-87732f.netlify.app/Dashboard') 
 
                 
             }
